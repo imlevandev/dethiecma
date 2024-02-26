@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #book-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .book-item {
+        width: 250px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .book-item h2 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+
+      .book-item p {
+        margin: 5px 0;
+      }
+
+      .book-item img {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Book List</h1>
+    <div id="book-list"></div>
+
+    <script>
+     $(document).ready(function() {
+  $.ajax({
+    url: 'http://localhost:3000/books',
+    method: 'GET',
+    success: function(response) {
+      var books = response;
+      var sortedBooks = books.sort(function(a, b) {
+        var dateA = new Date(a.ngaydang);
+        var dateB = new Date(b.ngaydang);
+        return dateB - dateA;
+      });
+      var limitedBooks = sortedBooks.slice(0, 6);
+
+      var bookList = $('#book-list');
+      bookList.empty();
+
+      limitedBooks.forEach(function(book) {
+        var bookItem = $('<div>').addClass('book-item');
+        bookItem.append($('<h2>').text(book.ten));
+        bookItem.append($('<p>').text('Giá: ' + book.giaban));
+        bookItem.append($('<p>').text('Ngày đăng: ' + book.ngaydang));
+        bookItem.append($('<img>').attr('src', book.img));
+
+        bookList.append(bookItem);
+      });
+    }
+  });
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "books": [
+      {
+        "ten": "Book 1",
+        "giaban": 10.99,
+        "ngaydang": "2024-01-01",
+        "img": "http://example.com/book1.jpg"
+      },
+      {
+        "ten": "Book 2",
+        "giaban": 19.99,
+        "ngaydang": "2024-02-15",
+        "img": "http://example.com/book2.jpg"
+      },
+      {
+        "ten": "Book 3",
+        "giaban": 7.99,
+        "ngaydang": "2024-02-20",
+        "img": "/images/download.jpg"
+      }
+    ]
+  }

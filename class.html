@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .sach {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .sach-info {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .sach-info h2 {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .sach-info p {
+        margin: 10px 0;
+        color: #666;
+      }
+
+      .sach-image {
+        flex: 0 0 200px;
+      }
+
+      .sach-image img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sach">
+        <div class="sach-image">
+          <img src="path/to/sach1.jpg" alt="Sach 1" />
+        </div>
+        <div class="sach-info">
+          <h2 id="tenSach1">Tên sách 1</h2>
+          <p id="giaSach1">Giá bán: 10.99</p>
+        </div>
+      </div>
+
+      <div class="sach">
+        <div class="sach-image">
+          <img src="path/to/sach2.jpg" alt="Sach 2" />
+        </div>
+        <div class="sach-info">
+          <h2 id="tenSach2">Tên sách 2</h2>
+          <p id="giaSach2">Giá bán: 19.99</p>
+        </div>
+      </div>
+
+      <div class="sach">
+        <div class="sach-image">
+          <img src="path/to/sach3.jpg" alt="Sach 3" />
+        </div>
+        <div class="sach-info">
+          <h2 id="tenSach3">Tên sách 3</h2>
+          <p id="giaSach3">Giá bán: 7.99</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cập nhật tên ảnh và giá của sách
+      document.getElementById("tenSach1").textContent = "Tên sách 1";
+      document.getElementById("giaSach1").textContent = "Giá bán: 10.99";
+
+      document.getElementById("tenSach2").textContent = "Tên sách 2";
+      document.getElementById("giaSach2").textContent = "Giá bán: 19.99";
+
+      document.getElementById("tenSach3").textContent = "Tên sách 3";
+      document.getElementById("giaSach3").textContent = "Giá bán: 7.99";
+    </script>
+  </body>
+</html>
